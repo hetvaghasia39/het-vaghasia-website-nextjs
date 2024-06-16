@@ -79,7 +79,7 @@ jobs:
         uses: actions/upload-pages-artifact@master
         with:
           path: ./out
-          if-no-files-found: error
+          if-no-files-found: name
 
   # Deployment job
   deploy:
