@@ -1,26 +1,11 @@
+
+
 import React from "react";
 import ArrowIcon from "../../../Icons/ArrowIcon";
 import { getTasksTextWithHighlightedKeyword } from "./taskAndType";
 
-export default function PragetX() {
-  const tasks = [
-    {
-      text: "Worked on projects in the multiple domains including ERP, CRM, E-commerce, and Other products",
-      keywords: ["ERP, CRM, E-commerce, and Other products", "Python", "Django", "AWS", "Devops", "React", "PostgreSQL"],
-    },
-    {
-      text: "Conducted test driven development to ensure website functionality and quality. Managed a large user base on applications.",
-      keywords: ["quality", "Agile"],
-    },
-    {
-      text: "Levereged my technical expertise to build intricate software applications across diverse industries.",
-      keywords: ["Team lead"],
-    },
-    {
-      text: "Collaborated closely with the team in regular meetings and interacted with clients",
-      keywords: ["Team lead", "Solution Architect"],
-    },
-  ];
+export default function PragetX(props: { tasks }) {
+  const { tasks } = props;
 
   return (
     <>
@@ -28,7 +13,7 @@ export default function PragetX() {
         <div className="flex flex-col spacey-y-2">
           {/* Title */}
           <span className="text-gray-100 sm:text-lg text-sm font-Arimo tracking-wide">
-            Team Lead <span className="text-AAsecondary">@ PragetX</span>
+            Project Manager <span className="text-AAsecondary">@ PragetX</span>
           </span>
           {/* Date */}
           <span className="font-mono text-xs text-gray-500">Nov 2023 - Present</span>
@@ -60,4 +45,31 @@ export default function PragetX() {
       </div>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const tasks = [
+    {
+      text: "Worked on projects in the multiple domains including ERP, CRM, E-commerce, and Other products",
+      keywords: ["ERP, CRM, E-commerce, and Other products", "Python", "Django", "AWS", "Devops", "React", "PostgreSQL"],
+    },
+    {
+      text: "Conducted test driven development to ensure website functionality and quality. Managed a large user base on applications.",
+      keywords: ["quality", "Agile"],
+    },
+    {
+      text: "Levereged my technical expertise to build intricate software applications across diverse industries.",
+      keywords: ["Team lead"],
+    },
+    {
+      text: "Collaborated closely with the team in regular meetings and interacted with clients",
+      keywords: ["Team lead", "Solution Architect"],
+    },
+  ];
+
+  return {
+    props: {
+      tasks
+    },
+  };
 }

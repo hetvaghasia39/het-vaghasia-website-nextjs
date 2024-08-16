@@ -8,3 +8,12 @@ export const getTasksTextWithHighlightedKeyword = (text: string, keyword: string
   }
   return text;
 };
+
+export async function getStaticProps() {
+  
+
+  return {
+    props: {
+    },
+  };
+}

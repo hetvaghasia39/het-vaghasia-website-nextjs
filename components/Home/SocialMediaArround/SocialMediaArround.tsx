@@ -1,3 +1,6 @@
+
+
+
 import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
 import GithubIcon from "../../Icons/GithubIcon";
@@ -20,6 +23,13 @@ const IconClickableWithAnimation = props => {
     </motion.div>
   );
 };
+
+export async function getStaticProps() {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
 export default function SocialMediaEmail() {
   return (
     <>

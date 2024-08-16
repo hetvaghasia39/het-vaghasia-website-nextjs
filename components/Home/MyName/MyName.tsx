@@ -1,9 +1,14 @@
 import React from "react";
 import { motion } from "../../../node_modules/framer-motion/dist/framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/router";
+
+export async function getStaticProps() {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
 export default function MyName() {
-  const router = useRouter();
+  // const router = useRouter();
   return (
     <div
       className="h-full flex flex-col justify-center

@@ -72,7 +72,7 @@ export default function SomethingIveBuilt() {
             col-span-8 flex flex-col items-start md:items-end space-y-3"
             >
               <div className="flex flex-col space-y-1 md:items-end z-10">
-                <span className="text-AAsecondary text-base">ENS Vision </span>
+                <span className="text-AAsecondary text-base">Recemt Project </span>
                 <a href="https://www.infinititalks.com" target="_blank" rel="noopener noreferrer">
                   <span className=" md:text-gray-200 text-AAsecondary font-bold text-xl hover:cursor-pointer">
                     Infiniti Talks
@@ -387,4 +387,14 @@ export default function SomethingIveBuilt() {
       </div>
     </div>
   );
+}
+export async function getStaticProps() {
+  // Fetch data or perform any asynchronous operations here
+  // You can use this data to pre-render the component
+
+  return {
+    props: {
+      // Pass any data you want to use in the component as props
+    },
+  };
 }

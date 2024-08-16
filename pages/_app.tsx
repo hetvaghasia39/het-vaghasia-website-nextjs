@@ -1,13 +1,11 @@
 import "../styles/globals.css";
 import { Analytics } from '@vercel/analytics/react';
 import AppContext from "../components/AppContextFolder/AppContext";
-import { useRef, useState } from "react";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps }) {
-  const timerCookie = useRef(null);
-  const windowSizeTrackerRef = useRef(null);
-  const mousePositionRef = useRef(null);
-  const [sharedState, setSharedState] = useState({
+  const sharedState = {
     portfolio: {
       NavBar: {
         IntervalEvent: null,
@@ -19,18 +17,32 @@ function MyApp({ Component, pageProps }) {
       }
     },
     userdata: {
-      timerCookieRef: timerCookie,
-      windowSizeTracker: windowSizeTrackerRef,
-      mousePositionTracker: mousePositionRef,
+      timerCookieRef: null,
+      windowSizeTracker: null,
+      mousePositionTracker: null,
     },
     typing: {
       keyboardEvent: null,
       eventInputLostFocus: null,
     },
     finishedLoading: false,
-  });
+  };
+
+  const router = useRouter();
+
+  useEffect(() => {
+    // Fetch data here using Next.js data fetching methods like getStaticProps or getServerSideProps
+    // Update the sharedState with the fetched data
+    // Example:
+    // const fetchedData = await fetch("https://api.example.com/data");
+    // sharedState.data = fetchedData;
+
+    // Set finishedLoading to true once the data is fetched
+    sharedState.finishedLoading = true;
+  }, []);
+
   return (
-    <AppContext.Provider value={{ sharedState, setSharedState }}>
+    <AppContext.Provider value={{ sharedState }}>
       <Component {...pageProps} />
       <Analytics />
     </AppContext.Provider>

@@ -1,5 +1,14 @@
+
+
 import React from "react";
 import ArrowIcon from "../../Icons/ArrowIcon";
+
+export async function getStaticProps() {
+  return {
+    props: {}, // will be passed to the page component as props
+  }
+}
+
 export default function GetInTouch() {
   return (
     <div

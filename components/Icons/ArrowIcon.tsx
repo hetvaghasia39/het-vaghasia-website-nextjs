@@ -16,3 +16,11 @@ export default function ArrowIcon(props) {
     </svg>
   )
 }
+export async function getStaticProps() {
+  
+
+  return {
+    props: {
+    },
+  };
+}
